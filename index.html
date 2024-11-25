@@ -1,13 +1,18 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Celebration Website</title>
   <style>
-    body {
+    /* Resetting margins and paddings for better cross-browser consistency */
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       background-color: purple;
       overflow: hidden;
       display: flex;
@@ -25,10 +30,10 @@
 
     .title {
       position: absolute;
-      top: 30%;
+      top: 25%;
       width: 100%;
       text-align: center;
-      font-size: 32px;
+      font-size: clamp(24px, 5vw, 36px); /* Responsive font size */
       color: white;
       font-family: "Brush Script MT", cursive;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -36,14 +41,14 @@
     }
 
     .heart {
-      font-size: 100px;
+      font-size: clamp(60px, 10vw, 100px); /* Responsive heart size */
       cursor: pointer;
       text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px pink;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) scale(1.2);
-      transition: transform 0.3s;
+      transition: transform 0.3s ease-in-out;
       z-index: 10;
     }
 
@@ -65,8 +70,8 @@
       position: absolute;
       border: 5px solid white;
       border-radius: 50%;
-      width: 20vw; /* Adjust to device width */
-      height: 20vw; /* Maintain aspect ratio */
+      width: 20vw;
+      height: 20vw;
       object-fit: cover;
       z-index: 1;
     }
@@ -77,15 +82,6 @@
       }
       100% {
         transform: translateY(100vh);
-      }
-    }
-
-    @-webkit-keyframes fall {
-      0% {
-        -webkit-transform: translateY(0);
-      }
-      100% {
-        -webkit-transform: translateY(100vh);
       }
     }
 
@@ -105,16 +101,18 @@
     <div class="heart" id="heart">❤️</div>
     <div class="confetti-container" id="confetti-container"></div>
     <div class="photos" id="photos">
-      <img src="Screenshot_20241122-101531_WhatsApp.jpg" alt="Photo 1" class="floating-photo">
-      <img src="Screenshot_20241122-101611_WhatsApp.jpg" alt="Photo 2" class="floating-photo">
-      <img src="Screenshot_20241122-101251_WhatsApp.jpg" alt="Photo 3" class="floating-photo">
-      <img src="Screenshot_20241122-101320_WhatsApp.jpg" alt="Photo 4" class="floating-photo">
-      <img src="Screenshot_20241122-101352_WhatsApp.jpg" alt="Photo 5" class="floating-photo">
-      <img src="Screenshot_20241122-101438_WhatsApp.jpg" alt="Photo 6" class="floating-photo">
-      <img src="Screenshot_20241122-101713_WhatsApp.jpg" alt="Photo 7" class="floating-photo">
-      <img src="Screenshot_20241122-133423_Gallery.jpg" alt="Photo 8" class="floating-photo">
-      <img src="Screenshot_20241122-133859_Gallery.jpg" alt="Photo 9" class="floating-photo">
-      <img src="Screenshot_20241122-133848_Gallery.jpg" alt="Photo 10" class="floating-photo">
+      <!-- Use relative paths or CDN-hosted images to ensure compatibility -->
+      <img src="photo1.jpg" alt="photo1.jpg" class="floating-photo">
+      <img src="photo2.jpg" alt="photo2.jpg" class="floating-photo">
+      <img src="photo3.jpg" alt="photo3.jpg" class="floating-photo">
+      <img src="photo4.jpg" alt="photo4.jpg" class="floating-photo">
+      <img src="photo5.jpg" alt="photo5.jpg" class="floating-photo">
+      <img src="photo6.jpg" alt="photo6.jpg" class="floating-photo">
+      <img src="photo7.jpg" alt="photo7.jpg" class="floating-photo">
+      <img src="photo8.jpg" alt="photo8.jpg" class="floating-photo">
+      <img src="photo9.jpg" alt="photo9.jpg" class="floating-photo">
+      <img src="photo11.jpg" alt="photo9.jpg" class="floating-photo">
+      <img src="photo10.jpg" alt="photo10.jpg" class="floating-photo">
     </div>
   </div>
   <script>
